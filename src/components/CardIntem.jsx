@@ -1,17 +1,19 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
 
 // eslint-disable-next-line react/prop-types
 const CardItem = ({ text, onDelete }) => {
     return (
-        <Card className="mb-3">
-            <Card.Body className="d-flex justify-content-between align-items-center">
+        <div className="card p-4 border border-gray-300 rounded mb-2 flex justify-between items-center">
+            <div className="card-body flex justify-between w-full items-center">
                 <span>{text}</span>
-                <Button variant="danger" onClick={onDelete}>
+                <button
+                    className="bg-red-500 text-white p-2 rounded hover:bg-red-700"
+                    onClick={onDelete}
+                >
                     Eliminar
-                </Button>
-            </Card.Body>
-        </Card>
+                </button>
+            </div>
+        </div>
     );
 };
 
