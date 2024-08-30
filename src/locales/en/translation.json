@@ -1,4 +1,7 @@
 {
   "add_button_text": "Add",
-  "project_title": "Card List"
+  "placeholder_write_something": "Escribe algo",
+  "project_title": "Card List",
+  "update_card": "Update Card",
+  "update_text": "Update"
 }

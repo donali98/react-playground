@@ -1,4 +1,7 @@
 {
   "add_button_text": "Agregar",
-  "project_title": "Lista de Tarjetas"
+  "placeholder_write_something": "Write something...",
+  "project_title": "Lista de Tarjetas",
+  "update_card": "Actualizar Tarjeta",
+  "update_text": "Actualizar"
 }
