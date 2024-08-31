@@ -1,7 +1,4 @@
-import React from 'react';
-
-// eslint-disable-next-line react/prop-types
-const InputField = ({ placeholder, value, onChange }) => {
+const InputField = ({placeholder, value, onChange}) => {
   return (
     <input
       type="text"

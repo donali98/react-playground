@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import CardItem from './components/CardIntem';
 import InputItem from './components/InputItem';
 import ButtonItem from './components/ButtonItem';
 import ModalItem from './components/ModalItem';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 
 const App = () => {
   const [inputValue, setInputValue] = useState('');
@@ -11,7 +11,7 @@ const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editIndex, setEditIndex] = useState(null);
   const [editValue, setEditValue] = useState('');
-  const { t } = useTranslation();
+  const {t} = useTranslation();
 
   const handleAddCard = () => {
     if (inputValue.trim()) {

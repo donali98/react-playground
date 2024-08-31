@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import {useEffect} from 'react';
+import {useTranslation} from 'react-i18next';
 
 // eslint-disable-next-line react/prop-types
-const Modal = ({ isOpen, onClose, onSubmit, value, onChange }) => {
-  const { t } = useTranslation();
+const Modal = ({isOpen, onClose, onSubmit, value, onChange}) => {
+  const {t} = useTranslation();
 
   useEffect(() => {
     const handleKeyDown = (e) => {
