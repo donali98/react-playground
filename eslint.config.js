@@ -31,9 +31,14 @@ export default [
     ignores: ['dist/**', 'eslint.config.js', 'prettier.config.cjs'],
     plugins,
     rules: {
-      'object-curly-spacing': ['error', 'never'], // Asegúrate de que esta regla esté alineada con Prettier
-      'prettier/prettier': ['error'], // Habilita Prettier como una regla de ESLint
       ...googleRules,
+      'prettier/prettier': ['error'],
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-uses-react': 'off',
+      'react/jsx-uses-vars': 'error',
+      'object-curly-spacing': ['error', 'never'], //esta regla debe estar alineada con Prettier
+      'prettier/prettier': ['error'], // Habilita Prettier como una regla de ESLint
+      indent: ['error', 2], // Asegúrate de que esto esté en 2 espacios
       'valid-jsdoc': 'off',
       'require-jsdoc': 'off',
     },

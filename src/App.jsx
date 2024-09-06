@@ -6,8 +6,7 @@ import InputItem from './components/InputItem';
 import ModalItem from './components/ModalItem';
 import CardItem from './components/CardItem';
 import NavbarItem from './components/NavbarItem';
-import SecondPageItem from './components/SecondPageItem';
-import BarChartItem from './components/BarChartItem'; // Importa el nuevo componente
+import BarChartItem from './components/BarChartItem';
 
 const App = () => {
   const [inputValue, setInputValue] = useState('');

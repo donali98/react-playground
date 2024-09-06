@@ -5,8 +5,8 @@ const NavbarItem = () => {
     <nav className="bg-blue-600 p-4 w-full shadow-lg">
       <ul className="flex space-x-8 justify-start items-center">
         <li
-          className="px-4 py-2 rounded-md hover:bg-blue-500 
-        transition duration-300"
+          className="px-4 py-2 rounded-md hover:bg-blue-500
+          transition duration-300"
         >
           <Link
             to="/"
