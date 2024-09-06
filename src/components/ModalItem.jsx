@@ -1,7 +1,6 @@
 import {useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
 
-// eslint-disable-next-line react/prop-types
 const Modal = ({isOpen, onClose, onSubmit, value, onChange}) => {
   const {t} = useTranslation();
 
@@ -26,7 +25,10 @@ const Modal = ({isOpen, onClose, onSubmit, value, onChange}) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center
+     justify-center"
+    >
       <div className="bg-white p-4 rounded shadow-lg w-96">
         <h2 className="text-xl mb-4">{t('update_card')}</h2>
         <input

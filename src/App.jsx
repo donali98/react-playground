@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
-import CardItem from './components/CardIntem';
-import InputItem from './components/InputItem';
-import ButtonItem from './components/ButtonItem';
-import ModalItem from './components/ModalItem';
+import {useState} from 'react';
 import {useTranslation} from 'react-i18next';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import ButtonItem from './components/ButtonItem';
+import InputItem from './components/InputItem';
+import ModalItem from './components/ModalItem';
+import CardItem from './components/CardItem';
+import NavbarItem from './components/NavbarItem';
+import SecondPageItem from './components/SecondPageItem';
+import BarChartItem from './components/BarChartItem'; // Importa el nuevo componente
 
 const App = () => {
   const [inputValue, setInputValue] = useState('');
@@ -39,39 +43,51 @@ const App = () => {
   };
 
   return (
-    <div className="container mx-auto max-w-lg p-5">
-      <h1 className="text-center mb-4 text-2xl font-bold">
-        {t('project_title')}
-      </h1>
+    <Router>
+      <NavbarItem />
+      <div className="container mx-auto max-w-lg p-5">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <h1 className="text-center mb-4 text-2xl font-bold">
+                  {t('project_title')}
+                </h1>
+                <div className="input-container flex gap-2 mb-5">
+                  <InputItem
+                    placeholder={t('placeholder_write_something')}
+                    value={inputValue}
+                    onChange={(e) => {
+                      setInputValue(e.target.value);
+                    }}
+                  />
+                  <ButtonItem onClick={handleAddCard} />
+                </div>
 
-      <div className="input-container flex gap-2 mb-5">
-        <InputItem
-          placeholder={t('placeholder_write_something')}
-          value={inputValue}
-          onChange={(e) => {
-            setInputValue(e.target.value);
-          }}
-        />
-        <ButtonItem onClick={handleAddCard}></ButtonItem>
+                {cards.map((card, index) => (
+                  <CardItem
+                    key={index}
+                    text={card}
+                    onDelete={() => handleDeleteCard(index)}
+                    onEdit={() => handleEditCard(index)}
+                  />
+                ))}
+
+                <ModalItem
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                  value={editValue}
+                  onChange={(e) => setEditValue(e.target.value)}
+                  onSubmit={handleUpdateCard}
+                />
+              </>
+            }
+          />
+          <Route path="/chart" element={<BarChartItem />} />
+        </Routes>
       </div>
-
-      {cards.map((card, index) => (
-        <CardItem
-          key={index}
-          text={card}
-          onDelete={() => handleDeleteCard(index)}
-          onEdit={() => handleEditCard(index)}
-        />
-      ))}
-
-      <ModalItem
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        value={editValue}
-        onChange={(e) => setEditValue(e.target.value)}
-        onSubmit={handleUpdateCard}
-      />
-    </div>
+    </Router>
   );
 };
 
